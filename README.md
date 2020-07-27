@@ -21,7 +21,7 @@ This can be invoked from the command line like so: node index.js
 
 ## License
     
-[A license has not been chosen for this project.]()
+A license has not been chosen for this project.
 ## Questions?
 Contact me:
 - [TheBobbyLlama on Github](https://github.com/TheBobbyLlama/)
