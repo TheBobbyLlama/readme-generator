@@ -5,12 +5,17 @@ const sectionInfo = [
   [ "Tests", "tests" ],
 ];
 
-const licenseOptions = [ "None", "MIT", "GNU" ]; // TODO - Add more here!
+const licenseOptions = [ "None", "GNU", "MIT" ];
 const licenseDescriptions = [
   [ "A license has not been chosen for this project.", "" ],
-  [ "MIT License", "https://choosealicense.com/licenses/mit/" ],
   [ "GNU General Public License v3.0", "https://choosealicense.com/licenses/gpl-3.0/" ],
+  [ "MIT License", "https://choosealicense.com/licenses/mit/" ],
 ];
+const licenseBadges = [
+  "",
+  "https://img.shields.io/badge/license-GPL-blue?style=plastic",
+  "https://img.shields.io/badge/license-MIT-green?style=plastic",
+]
 
 function generateTOC(data) {
   var list = [];
@@ -68,6 +73,41 @@ function generateLicenseInfo(data) {
     return `## License
     
 [${licenseDescriptions[findMe][0]}](${licenseDescriptions[findMe][1]})`;
+  } else {
+    return "";
+  }
+}
+
+function getLicenseBadge(data) {
+  var findMe = licenseOptions.indexOf(data);
+
+  if (findMe > 0) {
+    return `
+
+![License Badge](${licenseBadges[findMe]})`;
+  } else {
+    return "";
+  }
+}
+
+function generateQuestionsSection({github, email}) {
+  if ((github) || (email)) {
+    var result = `## Questions?
+Contact me:`;
+
+    if (github) {
+      result += `
+- [${github} on Github](https://github.com/${github}/)`
+    }
+
+    if (email) {
+      result += `
+- ${email}`
+    }
+
+    return result;
+  } else {
+    return "";
   }
 }
 
@@ -75,10 +115,11 @@ function generateLicenseInfo(data) {
 function generateMarkdown(data) {
   return `# ${data.projectName}
 
-${data.description}
+${data.description}${getLicenseBadge(data.license)}
 ${generateTOC(data)}
 ${generateSections(data)}
 ${generateLicenseInfo(data.license)}
+${generateQuestionsSection(data)}
 `;}
 
 module.exports = { licenseOptions, generateMarkdown };

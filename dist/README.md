@@ -1,6 +1,9 @@
 # Hello
 
-Yes
+World
+
+![License Badge](https://img.shields.io/badge/license-MIT-green?style=plastic)
+
 ## Table of Contents
 1. [Installation Instructions](#installation-instructions)
 2. [Usage](#usage)
@@ -12,20 +15,24 @@ Yes
 
 ## Installation Instructions
   
-ok
+1
 
 ## Usage
   
-wat
+2
 
 ## Contributing
   
-uh
+3
 
 ## Tests
   
-no
+4
 
 ## License
     
 [MIT License](https://choosealicense.com/licenses/mit/)
+## Questions?
+Contact me:
+- [TheBobbyLlama on Github](https://github.com/TheBobbyLlama/)
+- me@email.net
